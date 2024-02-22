@@ -1,0 +1,13 @@
+
+version: 2
+
+sources:
+
+  - name: arenadata_toolkit
+    tags: ['arenadata']
+    tables:
+      - name: db_files_current
+      - name: daily_operation
+      - name: db_files_history
+      - name: operation_exclude
+
