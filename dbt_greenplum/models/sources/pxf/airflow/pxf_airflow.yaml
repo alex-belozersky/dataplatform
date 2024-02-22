@@ -1,0 +1,26 @@
+version: 2
+
+models:
+
+  - name: airflow_logs
+    config:
+      tags: ['airflow']
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: dttm
+        tests:
+          - not_null
+      - name: dag_id
+      - name: task_id
+      - name: map_index
+      - name: event
+        tests:
+          - not_null
+      - name: execution_date
+      - name: owner
+      - name: extra
+
+
