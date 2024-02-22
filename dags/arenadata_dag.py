@@ -5,8 +5,7 @@ from airflow.utils.task_group import TaskGroup
 from airflow.utils.dates import days_ago
 
 from airflow_dbt.operators.dbt_operator import DbtRunOperator, DbtTestOperator
-from airflow.providers.airbyte.operators.airbyte import AirbyteTriggerSyncOperator
-from airflow.providers.postgres.operators.postgres import PostgresOperator
+
 
 
 default_args = {
