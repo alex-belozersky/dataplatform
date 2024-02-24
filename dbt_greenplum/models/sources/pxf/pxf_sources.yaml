@@ -3,7 +3,9 @@ version: 2
 sources:
 
   - name: pxf_airflow
+    schema: pxf_airflow
     tags: ['airflow']
     tables:
       - name: log
+      - name: dag_run
 
