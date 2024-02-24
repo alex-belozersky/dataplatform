@@ -33,6 +33,8 @@ with DAG(
     schedule='@hourly'
 ) as dag:
 
+    # LEVEL 1
+    # run and test airflow sources
     dbt_run_airflow_operator = DbtRunOperator(
         task_id='dbt_run_pxf_load',
         retries=0,  # Fail with no retries if source is bad
@@ -45,3 +47,20 @@ with DAG(
         select='sources.pxf.airflow',
     )
     dbt_run_airflow_operator >> dbt_test_airflow_operator
+
+    # LEVEL 2
+    # Run all models with airflow tag without sources
+    dbt_run_airflow_models = DbtRunOperator(
+        task_id='dbt_run_airflow_models',
+        retries=0,
+        select='tag:airflow',
+        exclude='sources',
+    )
+    dbt_test_airflow_models = DbtTestOperator(
+        task_id='dbt_run_airflow_models',
+        retries=0,
+        select='tag:airflow',
+        exclude='sources',
+    )
+    dbt_test_airflow_operator >> dbt_run_airflow_models >> dbt_test_airflow_models
+

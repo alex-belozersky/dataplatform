@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+
+  - name: airflow_dags
+    config:
+      tags: ['airflow', 'lvl_2']
+    columns:
+      - name: dag_id
+      - name: total_runs
+      - name: max_timest
