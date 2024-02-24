@@ -57,7 +57,7 @@ with DAG(
         exclude='sources',
     )
     dbt_test_airflow_models = DbtTestOperator(
-        task_id='dbt_run_airflow_models',
+        task_id='dbt_test_airflow_models',
         retries=0,
         select='tag:airflow',
         exclude='sources',
