@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+
+  - name: raw_eth_data
+    schema: raw_eth_data
+    tags: ['ethereum', 'crypto']
+    description: 'Схема сырых данных блоксейна Эфириум'
+    tables:
+
+      - name: eth_blocks
