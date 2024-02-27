@@ -1,0 +1,18 @@
+version: 2
+
+models:
+
+  - name: ethereum_blocks_plain
+    description: "Глупый способ сделать витрину блоков"
+    config:
+      tags: ['ethereum', 'plain']
+
+  - name: ethereum_blocks_inc
+    description: "Инкрементальная модель для блоков"
+    config:
+      tags: [ 'ethereum', 'incremental' ]
+
+  - name: ethereum_token_transfers
+    description: "Простая модель для токенов"
+    config:
+      tags: ['ethereum', 'plain']
