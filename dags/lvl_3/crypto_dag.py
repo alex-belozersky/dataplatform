@@ -37,7 +37,7 @@ with DAG(
     dbt_run_crypto = DbtRunOperator(
         task_id='dbt_run_crypto',
         retries=0,
-        select='demo.lvl3',
+        select='demo.lvl_3',
     )
 
     dbt_test_crypto = DbtTestOperator(
