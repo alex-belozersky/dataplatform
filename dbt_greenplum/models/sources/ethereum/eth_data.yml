@@ -9,3 +9,4 @@ sources:
     tables:
 
       - name: eth_blocks
+      - name: eth_token_transfers
