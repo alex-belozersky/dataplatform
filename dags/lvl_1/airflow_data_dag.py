@@ -17,7 +17,7 @@ default_args = {
     # recommended for DBT
     'max_active_runs': 1,
     'profiles_dir': '/home/ubuntu/.dbt',
-    'dir': '/home/ubuntu/airflow/dags/dags/dbt_greenplum',
+    'dir': '/home/ubuntu/airflow/dags/dbt_greenplum',
 }
 DAG_ID = 'airflow_data'
 
