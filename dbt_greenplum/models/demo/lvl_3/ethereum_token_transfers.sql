@@ -1,6 +1,6 @@
 {{
     config(
-        materialized = "incremental",
+        materialized = "table",
         distributed_by = 'block_hash',
     )
 }}
