@@ -43,18 +43,43 @@ models:
     columns:
       - name: token_address
         description: "Адрес контракта токена"
+        tests:
+          - not_null
+          - test_starts_with_0x
       - name: from_address
         description: "Адрес кошелька отправителя"
+        tests:
+          - not_null
+          - test_starts_with_0x
       - name: to_address
         description: "Адрес кошелька получателя"
+        tests:
+          - not_null
+          - test_starts_with_0x
       - name: value
         description: "Отправленная сумма ERC-20 или id NFT ERC-721"
       - name: transaction_hash
         description: "Хэш транзакции"
+        tests:
+          - not_null
+          - test_starts_with_0x
       - name: log_index
         description: "Лог транзакции"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
       - name: block_timestamp
       - name: block_number
+        description: Int number of Ethereum block
+        tests:
+          - dbt_utils.relationships_where:
+              # Все блоки из этой таблицы начиная с 16М есть в таблице блоков
+              to: ref('ethereum_blocks_plain')
+              field: number
+              # fix - Блоки грузились раньше трансферов!
+#              from_condition: block_number <= 18670400
+              config:
+                where: block_number <= 18670400
       - name: block_hash
       - name: filename_key
         description: "Имя файла в S3"
