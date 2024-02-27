@@ -16,3 +16,47 @@ models:
     description: "Простая модель для токенов"
     config:
       tags: ['ethereum', 'plain']
+    columns:
+      - name: token_address
+        description: "Адрес контракта токена"
+      - name: from_address
+        description: "Адрес кошелька отправителя"
+      - name: to_address
+        description: "Адрес кошелька получателя"
+      - name: value
+        description: "Отправленная сумма ERC-20 или id NFT ERC-721"
+      - name: transaction_hash
+        description: "Хэш транзакции"
+      - name: log_index
+        description: "Лог транзакции"
+      - name: block_timestamp
+      - name: block_number
+      - name: block_hash
+      - name: filename_key
+        description: "Имя файла в S3"
+
+
+  - name: ethereum_token_transfers_inc2
+    description: "Простая модель для токенов"
+    config:
+      tags: [ 'ethereum', 'plain' ]
+    columns:
+      - name: token_address
+        description: "Адрес контракта токена"
+      - name: from_address
+        description: "Адрес кошелька отправителя"
+      - name: to_address
+        description: "Адрес кошелька получателя"
+      - name: value
+        description: "Отправленная сумма ERC-20 или id NFT ERC-721"
+      - name: transaction_hash
+        description: "Хэш транзакции"
+      - name: log_index
+        description: "Лог транзакции"
+      - name: block_timestamp
+      - name: block_number
+      - name: block_hash
+      - name: filename_key
+        description: "Имя файла в S3"
+
+
