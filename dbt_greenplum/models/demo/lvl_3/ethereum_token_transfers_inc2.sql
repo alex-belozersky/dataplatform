@@ -2,6 +2,9 @@
     config(
         materialized = "incremental",
         distributed_by = 'block_hash',
+        pre_hook="set statement_mem='2040000 kB' ",
+        post_hook=["ANALYSE {{this}}"
+            , "GRANT SELECT on {{this}} to student"],
     )
 }}
 
