@@ -1,0 +1,15 @@
+psycopg2-binary
+virtualenv
+pandas
+clickhouse_driver
+airflow-clickhouse-plugin[pandas]
+petl
+matplotlib
+sqlalchemy
+sqlalchemy-greenplum
+apache-airflow-providers-airbyte[http]
+dbt-greenplum
+dbt-clickhouse
+Jinja2
+dbt-core
+airflow-dbt

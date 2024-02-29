@@ -7,8 +7,6 @@ from airflow.utils.dates import days_ago
 from airflow_dbt.operators.dbt_operator import DbtRunOperator, DbtTestOperator
 
 
-
-
 default_args = {
     'owner': 'Alex Belozersky',
     'start_date': datetime(2024, 1, 1),
