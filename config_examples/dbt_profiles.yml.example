@@ -1,0 +1,24 @@
+pilot_greenplum:
+  outputs:
+    test:
+      type: greenplum
+      host: 10.0.0.6
+      port: 5432
+      user: dbt_test
+      password: my_passwd
+      dbname: adb
+      schema: test_dbt
+      threads: 4
+
+    prod:
+      type: greenplum
+      host: 10.0.0.6
+      port: 5432
+      user: dbt_user
+      password: my_passwd
+      dbname: adb
+      schema: dbt
+      threads: 8
+
+
+  target: test

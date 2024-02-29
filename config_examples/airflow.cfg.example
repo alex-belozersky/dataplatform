@@ -1,0 +1,8 @@
+# Здесь только существенные конфиги, так как airflow.cfg довольно большой
+
+dags_folder = /home/ubuntu/airflow/dags//dags
+max_active_tasks_per_dag = 16
+
+load_examples = False
+
+sql_alchemy_conn = postgresql+psycopg2://airflow_user:your_airflow_pass@10.0.0.48/airflow_db
