@@ -6,6 +6,8 @@ Data Platform demo
 ## Как построить аналитическую инфраструктуру уровня PRO своими руками или с небольшой командой
 
 Запись вебинара доступна по ссылке
+https://vk.com/vk__cloud?z=video-164978780_456239342%2Fln-JDpSV4oXbQzfGUiFCL%2Fpl_-164978780_-2
+https://www.youtube.com/watch?v=1m9qqa9jGGE
 
 
 ## Содержание репозитория
