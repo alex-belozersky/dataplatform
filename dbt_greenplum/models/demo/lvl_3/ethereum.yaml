@@ -34,6 +34,7 @@ models:
       - name: block_hash
       - name: filename_key
         description: "Имя файла в S3"
+    pre_hook: ['SET gp_workfile_limit_files_per_query=500000']
 
 
   - name: ethereum_token_transfers_inc2
@@ -83,6 +84,13 @@ models:
       - name: block_hash
       - name: filename_key
         description: "Имя файла в S3"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - token_address
+            - transaction_hash
+          tags: ['heavy_test']
+    pre_hook: ['SET gp_workfile_limit_files_per_query=500000']
 
 
 exposures:
