@@ -5,5 +5,5 @@
     )
 }}
 
-select distinct *
+select *
 from {{ source('raw_eth_data', 'eth_token_transfers') }}
