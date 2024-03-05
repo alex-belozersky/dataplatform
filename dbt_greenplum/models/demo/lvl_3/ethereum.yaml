@@ -36,6 +36,56 @@ models:
         description: "Имя файла в S3"
     pre_hook: ['SET gp_workfile_limit_files_per_query=500000']
 
+  - name: ethereum_transactions
+    columns:
+      - name: "hash"
+        description: "Хэш транзакции"
+        tests:
+          - not_null
+          - test_starts_with_0x
+      - name: nonce
+      - name: transaction_index
+      - name: from_address
+        tests:
+          - not_null
+          - test_starts_with_0x
+      - name: to_address
+        tests:
+          - not_null
+          - test_starts_with_0x
+      - name: value
+      - name: gas
+      - name: gas_price
+      - name: input
+      - name: receipt_cumulative_gas_used
+      - name: receipt_gas_used
+      - name: receipt_contract_address
+      - name: receipt_root
+      - name: receipt_status
+      - name: block_timestamp
+      - name: block_number
+        description: Int number of Ethereum block
+        tests:
+            - dbt_utils.relationships_where:
+          # Все блоки из этой таблицы начиная с 16М есть в таблице блоков
+                to: ref('ethereum_blocks_plain')
+                field: number
+            # fix - Блоки грузились раньше трансферов!
+                config:
+                  where: block_number <= 18670400
+      - name: block_hash
+        tests:
+          - not_null
+          - test_starts_with_0x
+      - name: max_fee_per_gas
+      - name: max_priority_fee_per_gas
+      - name: transaction_type
+      - name: receipt_effective_gas_price
+      - name: filename_key
+        tests:
+          - not_null
+
+  - name: ethereum_logs
 
   - name: ethereum_token_transfers_inc2
     description: "Простая модель для токенов"
@@ -91,6 +141,8 @@ models:
             - transaction_hash
           tags: ['heavy_test']
     pre_hook: ['SET gp_workfile_limit_files_per_query=500000']
+
+
 
 
 exposures:

@@ -10,3 +10,6 @@ sources:
 
       - name: eth_blocks
       - name: eth_token_transfers
+      - name: eth_transactions
+        identifier: eth_transactions
+      - name: eth_logs
