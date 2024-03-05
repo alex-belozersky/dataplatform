@@ -58,3 +58,5 @@ with DAG(
         select='demo.lvl_4',
     )
 
+    dbt_run_crypto >> dbt_test_crypto
+
