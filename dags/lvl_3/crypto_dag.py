@@ -46,17 +46,25 @@ with DAG(
 
     dbt_run_crypto >> dbt_test_crypto
 
-    dbt_run_crypto = DbtRunOperator(
+    dbt_run_crypto_m2 = DbtRunOperator(
         task_id='dbt_run_crypto_m2',
         retries=0,
         select='demo.lvl_4',
     )
 
-    dbt_test_crypto = DbtTestOperator(
+    dbt_test_crypto_m2 = DbtTestOperator(
         task_id='dbt_test_crypto_m2',
         retries=0,
         select='demo.lvl_4',
     )
 
-    dbt_run_crypto >> dbt_test_crypto
+    dbt_run_crypto_m2 >> dbt_test_crypto_m2
+
+    dbt_run_crypto_dmarts = DbtRunOperator(
+        task_id='dbt_run_dmarts',
+        retries=2,
+        select='tag:ethereum,tag_dmart'
+    )
+
+    [dbt_test_crypto,dbt_test_crypto_m2] >> dbt_run_crypto_dmarts
 

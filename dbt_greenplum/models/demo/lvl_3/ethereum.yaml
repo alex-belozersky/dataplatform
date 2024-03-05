@@ -36,6 +36,9 @@ models:
         description: "Имя файла в S3"
     pre_hook: ['SET gp_workfile_limit_files_per_query=500000']
 
+  - name: block_statistics
+    tags: ['ethereum', 'dmart']
+
   - name: ethereum_transactions
     columns:
       - name: "hash"
@@ -160,6 +163,7 @@ exposures:
 
     depends_on:
       - ref('ethereum_token_transfers_inc2')
+      - ref('block_statistics')
 
     owner:
       name: Alex Belozersky
