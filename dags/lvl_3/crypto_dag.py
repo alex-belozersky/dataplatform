@@ -63,7 +63,7 @@ with DAG(
     dbt_run_crypto_dmarts = DbtRunOperator(
         task_id='dbt_run_dmarts',
         retries=2,
-        select='tag:ethereum,tag_dmart'
+        select='tag:ethereum,tag:dmart'
     )
 
     [dbt_test_crypto,dbt_test_crypto_m2] >> dbt_run_crypto_dmarts

@@ -37,7 +37,8 @@ models:
     pre_hook: ['SET gp_workfile_limit_files_per_query=500000']
 
   - name: block_statistics
-    tags: ['ethereum', 'dmart']
+    config:
+      tags: ['ethereum', 'dmart']
 
   - name: ethereum_transactions
     columns:
