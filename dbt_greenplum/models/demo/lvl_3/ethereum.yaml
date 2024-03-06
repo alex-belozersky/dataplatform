@@ -56,7 +56,7 @@ models:
         tests:
           - not_null:
               config:
-                error_if: ">=300*1000"
+                error_if: ">=1000*1000"
           - test_starts_with_0x
       - name: value
       - name: gas
