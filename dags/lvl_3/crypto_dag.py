@@ -29,7 +29,7 @@ with DAG(
     default_args=default_args,
     max_active_runs=1,
     catchup=False,
-    schedule='@hourly'
+    schedule='0 4-21/3 * * *'
 ) as dag:
 
     dbt_run_crypto = DbtRunOperator(
