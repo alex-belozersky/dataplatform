@@ -11,3 +11,16 @@ sources:
       - name: db_files_history
       - name: operation_exclude
 
+
+models:
+  - name: db_top_objects
+    description: >
+      Место занимаемое объектами в БД
+      Различная служебная информация (pg_catalog, AO Visimaps) с множеством мелких служебных объектах схлопнуты как отдельные строки
+      Партиционированные таблицы схлопнуты до родительских
+      Гранулярность: Hostname, obj (родительская таблица со схемой)
+    columns:
+      - name: hostname
+        description: Узел хранения данных, фактический сегмент сервер
+      - name: obj_type
+        description: Тип объекта - (Пользовательская таблица или индекс или служебный объект Greenplum)
