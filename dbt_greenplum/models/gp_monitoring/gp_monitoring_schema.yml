@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+
+  - name: gp_toolkit
+    tags: ['gp_toolkit']
+    tables:
+      - name: gp_resgroup_status_per_segment
+        description: Info on resgroup memory consumption by SGM
+      - name: gp_resgroup_status_per_host
+        description: Info on resgroup memory consumption by host
+
+
+  - name: pg_catalog
+    tags: ['postgres']
+    tables:
+      - name: pg_stat_activity
+      - name: gp_segment_configuration
+
+
+models:
+
+  - name: resgroup_per_segment
+    description: Memory usage in default resgroup
