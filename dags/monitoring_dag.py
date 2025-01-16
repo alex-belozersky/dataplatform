@@ -38,4 +38,5 @@ with DAG(
         task_id='dbt_run_monitoring',
         retries=0,  # Fail with no retries if source is bad
         select='gp_monitoring',
+        threads=1,
     )

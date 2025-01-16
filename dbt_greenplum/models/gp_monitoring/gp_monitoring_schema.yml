@@ -9,6 +9,8 @@ sources:
         description: Info on resgroup memory consumption by SGM
       - name: gp_resgroup_status_per_host
         description: Info on resgroup memory consumption by host
+      - name: gp_workfile_usage_per_query
+      - name: gp_workfile_usage_per_segment
 
 
   - name: pg_catalog
