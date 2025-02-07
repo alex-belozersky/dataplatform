@@ -38,7 +38,7 @@ from (
 				when oid is null then 'Orphanned file'
 				end as obj_type,
 			file_size
-		from {{source('arenadata_toolkit', 'db_files_current')}} --arenadata_toolkit.db_files_current dfc
+		from {{ source('arenadata_toolkit', 'db_files_current') }} --arenadata_toolkit.db_files_current dfc
 	) t
 ) tt
 group by hostname, obj_type, obj_name

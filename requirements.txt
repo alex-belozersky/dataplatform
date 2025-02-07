@@ -13,3 +13,4 @@ dbt-clickhouse
 Jinja2
 dbt-core
 airflow-dbt
+dbt-trino
