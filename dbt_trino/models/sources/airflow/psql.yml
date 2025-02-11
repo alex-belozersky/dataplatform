@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: psql
+    database: psql
+    schema: public
+    tables:
+      - name: dag_run
