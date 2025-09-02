@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: tpcds
+    database: iceberg
+    schema: tpcds
+    tables:
+      - name: store
