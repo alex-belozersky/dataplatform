@@ -2,7 +2,11 @@ version: 2
 
 sources:
   - name: tpcds
-    database: iceberg
+    database: ice
     schema: tpcds
     tables:
       - name: store
+      - name: customer
+      - name: customer_address
+      - name: date_dim
+      - name: store_returns
