@@ -14,3 +14,5 @@ Jinja2
 dbt-core
 airflow-dbt
 dbt-trino
+apache-airflow-providers-postgres
+apache-airflow-providers-trino
